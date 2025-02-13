@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Contato</title>
+    <link rel="stylesheet" href="css/contato.css">
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const mensagem = document.getElementById('mensagem').value;
+            window.location.href = `respostas.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&whatsapp=${encodeURIComponent(whatsapp)}&mensagem=${encodeURIComponent(mensagem)}`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <table>
+          <tr>
+            <td width="100" heigth="60"><a href="index.html">pagina inicial</a></td>
+            <td width="100" heigth="60"><a href="sobre.html">sobre mim</a></td>
+            <td width="100" heigth="60"><a href="portfolio.html">portfólio</a></td>
+            <td width="100" heigth="60"><a href="contato.html">contato</a></td>
+          </tr>
+        </table><br>
+    </header>
+      <table>
+        <tr>
+            <td>
+                <h1>MINHAS REDES</h1>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/elisaczz?igsh=MWtqZW82d3hxdzNvMQ==">
+                        <img src="img/logoinsta.png" width="45" height="45"></a>
+                    <a href="https://wa.me/qr/UF72BDHQKVWXD1">
+                        <img src="img/logozap.png"  width="57" height="57"></a>
+                </div>
+            </td>
+            <td>
+                <h1>Formulário de Cadastro</h1>
+                <form onsubmit="handleSubmit(event)">
+                    <label for="name">Nome Completo</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+                    
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="number">Whatsapp</label><br>
+                    <input type="number" id="whatsapp" name="whatsapp" required><br><br>
+
+                    <label for="mensagem">Mensagem</label><br>
+                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br>
+                    
+                    <button type="submit">Enviar</button>
+                </form>
+                
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

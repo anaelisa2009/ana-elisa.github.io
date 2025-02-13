@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/quiz.css">
+    <title>Quiz do Homem-Aranha</title>
+</head>
+<body>
+    <a href="portfolio.html">Voltar</a>
+    <div class="container">
+        <h1>Quiz do Homem-Aranha</h1>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Qual é o verdadeiro nome do Homem-Aranha?</p>
+                <input type="radio" name="q1" value="Peter Parker" required> Peter Parker<br>
+                <input type="radio" name="q1" value="Bruce Wayne"> Bruce Wayne<br>
+                <input type="radio" name="q1" value="Clark Kent"> Clark Kent<br>
+                <input type="radio" name="q1" value="Tony Stark"> Tony Stark
+            </div>
+            <div class="question">
+                <p>2. Qual é a cidade natal do Homem-Aranha?</p>
+                <input type="radio" name="q2" value="Gotham City" required> Gotham City<br>
+                <input type="radio" name="q2" value="Metropolis"> Metropolis<br>
+                <input type="radio" name="q2" value="New York"> New York<br>
+                <input type="radio" name="q2" value="Central City"> Central City
+            </div>
+            <div class="question">
+                <p>3. Quem é o principal inimigo do Homem-Aranha?</p>
+                <input type="radio" name="q3" value="Lex Luthor" required> Lex Luthor<br>
+                <input type="radio" name="q3" value="Joker"> Joker<br>
+                <input type="radio" name="q3" value="Green Goblin"> Green Goblin<br>
+                <input type="radio" name="q3" value="Thanos"> Thanos
+            </div>
+            <div class="question">
+                <p>4. Qual é o nome da tia do Homem-Aranha?</p>
+                <input type="radio" name="q4" value="Tia May" required> Tia May<br>
+                <input type="radio" name="q4" value="Tia Harriet"> Tia Harriet<br>
+                <input type="radio" name="q4" value="Tia Martha"> Tia Martha<br>
+                <input type="radio" name="q4" value="Tia Sarah"> Tia Sarah
+            </div>
+            <div class="question">
+                <p>5. Qual é a profissão de Peter Parker?</p>
+                <input type="radio" name="q5" value="Cientista" required> Cientista<br>
+                <input type="radio" name="q5" value="Jornalista"> Jornalista<br>
+                <input type="radio" name="q5" value="Advogado"> Advogado<br>
+                <input type="radio" name="q5" value="Médico"> Médico
+            </div>
+            <input type="button" value="Enviar" onclick="calculateScore()">
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const quizForm = document.getElementById('quizForm');
+            const result = document.getElementById('result');
+
+            if (quizForm.q1.value === 'Peter Parker') score++;
+            if (quizForm.q2.value === 'New York') score++;
+            if (quizForm.q3.value === 'Green Goblin') score++;
+            if (quizForm.q4.value === 'Tia May') score++;
+            if (quizForm.q5.value === 'Jornalista') score++;
+
+            result.textContent = "Você acertou " + score + " de 5 perguntas.";
+        }
+    </script>
+</body>
+</html>

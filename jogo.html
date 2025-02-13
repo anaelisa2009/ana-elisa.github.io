@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <title>Jogo de Adivinhação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: antiquewhite;
+            padding: 20px;
+            box-shadow: 0 0 10px brown;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 60px;
+            margin: 10px;
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <a href="portfolio.html">Voltar</a>
+    <div class="container">
+        <h1>Jogo de Adivinhação</h1>
+        <p>Tente adivinhar o número entre 1 e 100</p>
+        <input type="number" id="guess" min="1" max="100" required>
+        <input type="button" value="Adivinhar" onclick="guessNumber()">
+        <p id="result"></p>
+        <p id="attempts">Tentativas: 0</p>
+    </div>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+        let maxAttempts = 10;
+
+        function guessNumber() {
+            let userGuess = document.getElementById('guess').value;
+            let result = document.getElementById('result');
+            let attemptsDisplay = document.getElementById('attempts');
+
+            if (attempts < maxAttempts) {
+                attempts++;
+                attemptsDisplay.textContent = "Tentativas: " + attempts;
+
+                if (userGuess < randomNumber) {
+                    result.textContent = "Maior!";
+                } else if (userGuess > randomNumber) {
+                    result.textContent = "Menor!";
+                } else {
+                    result.textContent = "Parabéns! Você acertou o número " + randomNumber + " em " + attempts + " tentativas.";
+                }
+            } else {
+                result.textContent = "Fim de jogo! Você ultrapassou o limite de tentativas. O número era " + randomNumber;
+                document.getElementById('guess').disabled = true;
+                document.querySelector('input[type="button"]').disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>

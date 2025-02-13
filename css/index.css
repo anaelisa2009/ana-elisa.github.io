@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    background-color: antiquewhite;
+    color: brown;
+   
+  }
+ 
+  table {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+  }
+
+  td a:hover {
+    text-decoration: underline;
+  }
+  
+ 
+  div#table {
+    text-align: center;
+  }
+ 
+  div#table img {
+    display: block;
+    margin: 0 auto;
+  }
+
+
+  a {
+    text-decoration: none;
+    color:brown;
+  }
+

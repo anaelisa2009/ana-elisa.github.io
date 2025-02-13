@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Recebidos</title>
+    <link rel="stylesheet" href="css/contato.css">
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            const email = urlParams.get('email');
+            const whatsapp = urlParams.get('whatsapp');
+            const mensagem = urlParams.get('mensagem');
+            document.getElementById('name').textContent = name;
+            document.getElementById('email').textContent = email;
+            document.getElementById('whatsapp').textContent = whatsapp;
+            document.getElementById('mensagem').textContent = mensagem;
+            
+        }
+    </script>
+</head>
+<body>
+    <a href="contato.html">Voltar</a>
+    <h1>Dados Recebidos</h1>
+    <p>Nome: <span id="name"></span></p>
+    <p>email: <span id="email"></span></p>
+    <p>Whatsapp: <span id="whatsapp"></span></p>
+    <p>Mensagem: <span id="mensagem"></span></p>
+</body>
+</html>

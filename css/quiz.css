@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color:brown
+}
+.container {
+    background-color: ant;
+    padding: 20px;
+    box-shadow: 0 0 10px brown;
+    text-align: center;
+}
+.question {
+    margin-bottom: 20px;
+}
+input[type="button"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+h1 {
+    color: rgb(126, 32, 32);
+}
